@@ -1,4 +1,5 @@
-=Inventory App
+Inventory App
+=============
 
 A simple app to keep track of your inventory.
 
