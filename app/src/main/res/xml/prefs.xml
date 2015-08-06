@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
-        android:defaultValue="kylecorry31@gmail.com"
+        android:defaultValue="skiley99@gmail.com"
         android:key="email"
         android:summary="user@example.com"
         android:title="Email" />

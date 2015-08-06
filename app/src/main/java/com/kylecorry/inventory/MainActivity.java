@@ -12,6 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,11 +35,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setBackgroundDrawable(null);
         dbHandler = new MyDBHandler(this, null);
         // Use a list to store the inventory
         inventory = new ArrayList<>();
         // fill the list with the inventory from the database
-
         populateList();
         // set the listview UI element's data to inventory list
         adapter = new ArrayAdapter<String>(this, R.layout.list_item_inventory, R.id.item, inventory);
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         fab.setOnClickListener(this);
         // tell the user what to do
         Toast.makeText(this, "Tap item to subtract 1, hold to delete", Toast.LENGTH_LONG).show();
+        createAds();
     }
 
 
@@ -114,6 +118,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createAds() {
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
     private void populateList() {

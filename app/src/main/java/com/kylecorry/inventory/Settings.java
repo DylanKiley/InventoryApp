@@ -13,7 +13,7 @@ public class Settings extends AppCompatActivity {
     static Preference emailPref;
     static SharedPreferences sharedPreferences;
 
-    public static final String MAIN_EMAIL = "user@gmail.com";
+    public static final String MAIN_EMAIL = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
