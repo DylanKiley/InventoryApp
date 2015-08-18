@@ -76,9 +76,9 @@ public class MyDBHandler extends SQLiteOpenHelper {
         // map the column name to amount
         ContentValues values = new ContentValues();
         // if item is out...
-        if (amount <= 0) {
+        if (amount <= 2) {
             // store it as 0 (instead of negative)
-            amount = 0;
+            amount = 2;
             // email if out
             Intent email = new Intent(Intent.ACTION_SEND);
             // to
